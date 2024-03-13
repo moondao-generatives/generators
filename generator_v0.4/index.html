@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>pfp generator</title>
+		<script type="text/javascript" src="p5js_1.9.0_min.js"></script>
+		<script type="text/javascript" src="d3-delaunay.js"></script>
+		<script type="text/javascript" src="html2canvas.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+
+	<body>
+
+		<pfp>
+			<div id="composition">
+				<img id="process-image" src="test-01.jpg">
+				<div id="canvas-container"></div>
+
+				<img id="MoonDAO-logo" src="MoonDAO-logo.svg">
+
+			</div>
+		</pfp>
+
+		<div class="controls">
+			<h3>Background image</h3>
+			<label for="transparency">Opacity:</label>
+			<input id="transparency" type="range" name="transparency" min="0" max="1" value="0.95" step="0.01">
+			<label for="blur">Blur:</label>
+			<input id="blur" type="range" name="blur" min="0" max="80" value="30" data-sizing="px">
+			<label for="loader">Image</label>
+			<input id="loader" type="file" name="loader" accept="image/*">
+			<button id="download-btn">Download Image</button>
+
+		</div>
+
+		<script src="ui-controls.js"></script>
+		<script src="weighted-voronoi.js"></script>
+		
+		<script>
+		
+
+			function getRandomColor() {
+				var letters = '0123456789ABCDEF';
+				var color = '#';
+				for (var i = 0; i < 6; i++) {
+					color += letters[Math.floor(Math.random() * 16)];
+				}
+				return color;
+			}
+
+			document.getElementById('loader').addEventListener('change', function(e) {
+				var file = e.target.files[0];
+				var reader = new FileReader();
+				reader.onload = function(event) {
+					document.getElementById('process-image').src = event.target.result;
+					console.log("img uploaded");
+					preload();
+				};
+				reader.readAsDataURL(file);
+			});
+
+			document.getElementById('download-btn').addEventListener('click', function() {
+				const canvas = document.getElementById("defaultCanvas0");
+				const ctx = canvas.getContext("2d");
+				ctx.scale(1, 1);
+
+				html2canvas(document.getElementById('composition')).then(function(canvas) {
+					var link = document.createElement('a');
+					link.download = 'composition.jpg';
+					link.href = canvas.toDataURL('image/jpeg');
+					link.click();
+				});
+			});
+		</script>
+
+	</body>
+
+</html>

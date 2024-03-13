@@ -1,0 +1,173 @@
+/* style */
+body {
+	font-family: Arial, sans-serif;
+	font-size: 17;
+	margin: 0;
+	padding: 10px;
+	background-color: #000830;
+}
+
+#viewer {
+	max-width: 954px;
+	height: 92vh;
+	margin: 0 auto;
+	padding: 3px;
+	background-color: #000e64;
+	border: 5px solid #db0000;
+	box-sizing: border-box;
+	z-index: 0;
+}
+
+#Entity-name {
+	background-color: #db0000;
+	padding: 12px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+#Entity-name h1 {
+	color: #fff;
+	margin: 0;
+}
+
+#entity-information {
+	margin-bottom: 10px;
+	max-height: calc(100vh - 200px);
+	overflow-y: auto;
+}
+
+#entity-number-and-code {
+	padding-left: 20px;
+}
+
+#fixed-values {
+	font-family: Arial, sans-serif;
+	font-size: 20;
+	background-color: #7194a6;
+	padding: 3px;
+	margin-bottom: 10px;
+	height: 6vh;
+}
+
+#members, #params {
+	background-color: #8ca200;
+	padding: 10px;
+}
+
+.member {
+	font-family: monospace;
+	font-style: italic;
+	font-weight: lighter;
+	background-color: #8ca200;
+	padding: 10px;
+}
+
+#members>div, #params>div {
+	background-color: #9a9aa6;
+	padding: 10px;
+	margin-bottom: 8px;
+}
+
+#upload-img-btn,
+#delete-img-btn,
+#go-generate-pfp,
+#save-pfp {
+	background-color: #7194a6;
+	height: 3vh;
+	margin-bottom: 10px;
+	text-align: center;
+	cursor: pointer;
+}
+
+#upload-img-btn,
+#delete-img-btn h3,
+#go-generate-pfp h3 {
+	color: #fff;
+	margin: 10;
+}
+
+#delete-img-btn {
+	display: none;
+}
+
+#upload-img-btn h3:hover,
+#go-generate-pfp h3:hover,
+#delete-img-btn h3:hover,
+#save-pfp h3:hover {
+	color: yellow;
+}
+
+#pfp-viewer, #moondao-logo, #uploaded-image {
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#loaded-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(83, 43, 216, 0.22);
+	backdrop-filter: blur(10.2px);
+	-webkit-backdrop-filter: blur(10.2px);
+	z-index: 0;
+}
+
+#uploaded-image {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	background: rgba(83, 43, 216, 0.22);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(10.2px);
+	-webkit-backdrop-filter: blur(10.2px);
+	z-index: 0;
+}
+
+#pfp-viewer {
+	width: 45.65vh;
+	height: 45.65vh;
+	background: rgb(34, 195, 112);
+	background: linear-gradient(0deg, rgba(34, 195, 112, 1) 0%, rgba(45, 84, 253, 1) 100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+/* moon dao logo */
+#moondao-logo {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	mix-blend-mode: difference;
+	z-index: 1;
+}
+
+.st0 {
+	fill: none;
+	stroke: #FF3721;
+	stroke-width: 3.8;
+}
+
+.st1 {
+	fill: #FF3721;
+}
+
+/* - - - - - - - */
+@media screen and (max-width: 600px) {
+	#viewer {
+		padding: 10px;
+	}
+}
+
+.member {
+	height: 3vh;
+}

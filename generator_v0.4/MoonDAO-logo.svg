@@ -1,0 +1,215 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000">
+	<defs>
+		
+		<style>
+			
+			<!-- Hourglass -->
+			.hgb,
+			.hgt {
+				opacity: 0.12;
+				mix-blend-mode: difference;
+			}
+			.hgb {
+				fill: url("#linear-gradient-1");
+			}
+			.hgt {
+				fill: url("#linear-gradient-2");
+			}
+			
+			<!-- data -->
+			.data {
+				fill: none;
+				stroke: #627e98;
+				stroke-linejoin: round;
+				stroke-width: 10px;
+			}
+			
+			<!-- grid -->
+			.g-20 {
+				fill: #992e69;
+			}
+			.g-19 {
+				fill: #7b995a;
+			}
+			.g-18 {
+				fill: #36994f;
+			}
+			.g-17 {
+				fill: #995c8b;
+			}
+			.g-16 {
+				fill: #7f2599;
+			}
+			.g-15 {
+				fill: #8a998f;
+			}
+			.g-14 {
+				fill: #999768;
+			}
+			.g-13 {
+				fill: #36992b;
+			}
+			.g-12 {
+				fill: #423699;
+			}
+			.g-11 {
+				fill: #99377d;
+			}
+			.g-010 {
+				fill: #4d8a99;
+			}
+			.g-09 {
+				fill: #99845f;
+			}
+			.g-08 {
+				fill: #469996;
+			}
+			.g-07 {
+				fill: #673999;
+			}
+			.g-06 {
+				fill: #639959;
+			}
+			.g-05 {
+				fill: #5d5d99;
+			}
+			.g-04 {
+				fill: #996d26;
+			}
+			.g-03 {
+				fill: #6f9934;
+			}
+			.g-02 {
+				fill: #766899;
+			}
+			.g-01 {
+				fill: #429977;
+			}
+			.g-01,
+			.g-02,
+			.g-03,
+			.g-04,
+			.g-05,
+			.g-06,
+			.g-07,
+			.g-08,
+			.g-09,
+			.g-10,
+			.g-11,
+			.g-12,
+			.g-13,
+			.g-14,
+			.g-15,
+			.g-16,
+			.g-17,
+			.g-18,
+			.g-19,
+			.g-20 {
+				mix-blend-mode: exclusion;
+			}
+			
+			<!-- Q & P -->
+			.qq {
+				opacity: 0;
+				fill: #d80000;
+			}
+			.pp {
+				opacity: 0;
+				fill: #000000;
+			}
+			
+			<!-- MoonDAO logo -->
+			.logo-bg {
+				fill: #002cff;
+				opacity: 0.95;
+				mix-blend-mode: overlay;
+			}
+			.logo-c {
+				fill: #b3e3cd;
+			}
+			.logo-b {
+				fill: #d1a830;
+			}
+			.logo-a {
+				fill: #d7263c;
+			}
+			.logo-c,
+			.logo-b,
+			.logo-a {
+				opacity: 0.96;
+			}
+			
+		</style>
+		
+		<linearGradient id="linear-gradient-1" x1="500" y1="936.992" x2="500" y2="306.91" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#c6c02b"/>
+			<stop offset="1" stop-color="#3a4b90"/>
+		</linearGradient>
+		
+		<linearGradient id="linear-gradient-2" x1="500" y1="693.09" x2="500" y2="63.008" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#3bb6ff"/>
+			<stop offset="1" stop-color="#30ae31"/>
+		</linearGradient>
+		
+	</defs>
+	
+	<title>MoonDAO logo</title>
+	
+	<g style="isolation: isolate">
+		
+		<!-- hourglass -->
+		<g id="hourglass">
+			<path id="ihgb" class="hgb" d="M682.927,365.459A315.041,315.041,0,1,0,764.5,450.8,314.841,314.841,0,0,0,682.927,365.459Z"/>
+			<path id="ihgt" class="hgt" d="M682.927,634.541a315.042,315.042,0,1,0-107.26,49.326A314.838,314.838,0,0,0,682.927,634.541Z"/>
+		</g>
+		
+		<!-- data -->
+		<g>
+			<line id="dat-b" class="data" x1="81.301" y1="959.35" x2="918.699" y2="959.35"/>
+			<line id="dat-a" class="data" x1="81.301" y1="40.65" x2="918.699" y2="40.65"/>
+		</g>
+		
+		<!-- grid -->
+		<g id="Grid_5x4">
+			<rect id="G20" class="g-20" x="601.626" y="621.951" width="101.626" height="81.301"/>
+			<rect id="G19" class="g-19" x="500"     y="621.951" width="101.626" height="81.301"/>
+			<rect id="G18" class="g-18" x="398.374" y="621.951" width="101.626" height="81.301"/>
+			<rect id="G17" class="g-17" x="296.748" y="621.951" width="101.626" height="81.301"/>
+			<rect id="G16" class="g-16" x="601.626" y="540.65"  width="101.626" height="81.301"/>
+			<rect id="G15" class="g-15" x="500"     y="540.65"  width="101.626" height="81.301"/>
+			<rect id="G14" class="g-14" x="398.374" y="540.65"  width="101.626" height="81.301"/>
+			<rect id="G13" class="g-13" x="296.748" y="540.65"  width="101.626" height="81.301"/>
+			<rect id="G12" class="g-12" x="601.626" y="459.35"  width="101.626" height="81.301"/>
+			<rect id="G11" class="g-11" x="500"     y="459.35"  width="101.626" height="81.301"/>
+			<rect id="G10" class="g-10" x="398.374" y="459.35"  width="101.626" height="81.301"/>
+			<rect id="G09" class="g-09" x="296.748" y="459.35"  width="101.626" height="81.301"/>
+			<rect id="G08" class="g-08" x="601.626" y="378.049" width="101.626" height="81.301"/>
+			<rect id="G07" class="g-07" x="500"     y="378.049" width="101.626" height="81.301"/>
+			<rect id="G06" class="g-06" x="398.374" y="378.049" width="101.626" height="81.301"/>
+			<rect id="G05" class="g-05" x="296.748" y="378.049" width="101.626" height="81.301"/>
+			<rect id="G04" class="g-04" x="601.626" y="296.748" width="101.626" height="81.301"/>
+			<rect id="G03" class="g-03" x="500"     y="296.748" width="101.626" height="81.301"/>
+			<rect id="G02" class="g-02" x="398.374" y="296.748" width="101.626" height="81.301"/>
+			<rect id="G01" class="g-01" x="296.748" y="296.748" width="101.626" height="81.301"/>
+		</g>
+		
+		<!-- Q & P -->
+		<g>
+			<rect id="Q" class="qq" x="418.699" y="418.699" width="162.602" height="162.602"/>
+			<path id="P" class="pp" d="M581.3,500a81.3,81.3,0,1,0-5.709,29.927A81.248,81.248,0,0,0,581.3,500Z"/>
+		</g>
+		
+		<!-- MoonDAO logo -->
+		<g id="logo-background">
+			<path class="logo-bg" d="M317.073,634.541a315.041,315.041,0,0,0,365.854,0V365.459a315.041,315.041,0,0,0-365.854,0Z"/>
+		</g>
+		
+		<g id="logo-shapes">
+			<path class="logo-c" d="M548.74,493.655c27.312-15.643,34.814-6.347,49.665,11.168-15.889-29.111-11.5-32.181,40.321-73.221-57.362,34.566-60.944,39.61-93.655-4.389C573.762,470.335,567.183,478.3,548.74,493.655Z"/>
+			<path class="logo-b" d="M682.927,634.541c-162.386-18.177-224.846-69.633-154.29-128.419L317.073,634.541a315.041,315.041,0,0,0,365.854,0Z"/>
+			<path class="logo-a" d="M490.854,432.317A69.1,69.1,0,1,0,486,457.755,69.062,69.062,0,0,0,490.854,432.317Z"/>
+		</g>
+		
+	</g>
+	
+</svg>

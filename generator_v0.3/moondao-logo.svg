@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#FF3721;stroke-width:2.8;}
+	.st1{fill:#FF3721;}
+</style>
+<path id="frame" class="st0" d="M50,8.3c13.8,0,27.3,4.3,38.6,12.2v56.7c-23.1,16.3-54,16.3-77.1,0V20.6C22.7,12.6,36.2,8.3,50,8.3z
+	"/>
+<path id="moon" class="st1" d="M32.8,48.9c8.3,0,15-6.7,15-15s-6.7-15-15-15l0,0c-8.3,0-15,6.7-15,15S24.5,48.9,32.8,48.9z"/>
+<path id="floor" class="st1" d="M90.4,78.2c-59-6.9-36.9-26.2-33.8-28.1c-2.2,1.3-47,28.1-47,28.1l5.3,3.5
+	C36.3,94.9,63.5,95,85,81.8L90.4,78.2L90.4,78.2L90.4,78.2z"/>
+<path id="ship" class="st1" d="M60.6,47.6c0,0,3.9-3.1,4-5.3c0.1-2.4-4.6-9.7-4.6-9.7c3.3,4.5,5.4,6.3,5.4,6.3
+	c3.1,2.9,9.5-1.3,15.9-5.4c0,0-7.6,5.4-10.8,9.4c-1.4,1.7,0,4.8,1.3,6.9c0,0-2.7-4.1-5.4-4.2C63.8,45.4,60.6,47.6,60.6,47.6
+	L60.6,47.6z"/>
+</svg>

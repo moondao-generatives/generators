@@ -1,0 +1,78 @@
+body {
+	text-align: center;
+	background: #001D27;
+	color: #08f98a;
+	font-family: "helvetica neue", sans-serif;
+	font-weight: 100;
+	font-size: 20px;
+	margin: 0;
+	padding: 0;
+}
+
+pfp {
+	width: 800px;
+	height: 800px;
+	margin: 0 auto;
+}
+
+#composition {
+	width: 800px;
+	height: 800px;
+	position: relative;
+}
+
+#process-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 800px;
+	height: 800px;
+	background: #ffc600;
+	opacity: var(--transparency);
+	filter: blur(var(--blur));
+	z-index: 0;
+}
+
+#canvas-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+/* MoonDAO logo */
+#MoonDAO-logo {
+	position: absolute;
+	opacity: 0.95;
+	mix-blend-mode: multiply;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+}
+
+/* UI */
+.h3 {
+	font-size: 10px;
+	font-weight: 50;
+}
+
+.controls {
+	margin-top: 20px;
+}
+
+input {
+	width: 100px;
+}
+
+:root {
+	--transparency: 0.95;
+	--blur: 30px;
+}
+
+.hl {
+	color: #ffc600;
+}
