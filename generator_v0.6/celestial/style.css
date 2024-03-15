@@ -26,8 +26,8 @@ body form {
 }
 
 #pfp {
-	width: 750px;
-	height: 750px;
+	width: 720px;
+	height: 720px;
 	position: absolute;
 	min-width: 200px;
 	max-width: 900px;
@@ -43,7 +43,7 @@ body form {
 	margin: 0;
 	padding: 0;
 	position: absolute;
-	top: 50px;
+	/*top: 50px;*/
 	left: 0;
 	overflow: visible;
 }
