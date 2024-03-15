@@ -10,8 +10,10 @@ body {
 }
 
 pfp {
-	width: 800px;
-	height: 800px;
+	min-width: 200px;
+	max-width: 900px;
+	width: 900px;
+	height: 900px;
 	margin: 0 auto;
 }
 
@@ -28,8 +30,8 @@ pfp {
 	width: 800px;
 	height: 800px;
 	background: #ffc600;
-	opacity: var(--transparency);
-	filter: blur(var(--blur));
+	opacity: 1;
+	filter: blur(40px);
 	z-index: 0;
 }
 
@@ -66,11 +68,6 @@ pfp {
 
 input {
 	width: 100px;
-}
-
-:root {
-	--transparency: 0.95;
-	--blur: 30px;
 }
 
 .hl {

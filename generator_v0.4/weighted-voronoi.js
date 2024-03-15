@@ -93,7 +93,7 @@ function draw() {
 	for (let i = 0; i < points.length; i++) {
 		let v = points[i];
 		let nx = 2;
-		let mx = 48;
+		let mx = 40;
 		let col = loadedIMG.get(v.x, v.y);
 		//stroke(0);
 		stroke(col);

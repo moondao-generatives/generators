@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>MoonDAO Entity PFP Generator</title>
+
+		<script type="text/javascript" src="d3.min.js"></script>
+		<script type="text/javascript" src="d3.geo.projection.min.js"></script>
+		<script type="text/javascript" src="celestial.js"></script>
+
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="celestial.css">
+
+	</head>
+
+	<body>
+
+		<div id="pfp">
+			<div id="celestial-map"></div>
+		</div>
+
+		<script type="text/javascript">
+			Celestial.display({
+				location: true,
+				projection: "airy",
+				datapath: "../stars-data/", // Path/URL to data files
+				controls: false,            // zoom controls
+				form: true,
+				formFields: {
+					"location": false,
+					"general": false,
+					"stars": true,
+					"dsos": true,
+					"constellations": false,
+					"lines": false,
+					"other": false,
+					"download": false
+				}, // ----------------------------------------------------------
+				lines: { // Display & styles
+					graticule: {
+						show: false
+					},
+					equatorial: {
+						show: true,
+						stroke: "#ccc",
+						width: 1.4,
+						opacity: 0.25
+					},
+					ecliptic: {
+						show: true,
+						stroke: "#71111f",
+						width: 3.2,
+						opacity: 0.7
+					},
+					galactic: {
+						show: false
+					},
+					supergalactic: {
+						show: false
+					}
+				}, // ----------------------------------------------------------
+				planets: { // Planets
+					show: true,
+					symbolType: "symbol"
+				}, // ----------------------------------------------------------
+				stars: { // Stars
+					show: true,
+					limit: 4.9,    // Show only stars brighter than limit magnitude
+					colors: false, // use style setting below if false
+					style: {
+						fill: "#ffffff",
+						opacity: 1
+					},
+					designation: false,
+					designationType: "desig",
+				}, // ----------------------------------------------------------
+				dsos: { // Deep Space Objects 
+					show: true,
+					limit: 6,     // Show only DSOs brighter than limit magnitude
+					colors: true, // use style setting below if false
+					style: {
+						fill: "#cccccc",
+						stroke: "#cccccc",
+						width: 2,
+						opacity: 1
+					}, // Default style for dsos
+					size: 0.1,
+					names: false,  // DSO names
+					exponent: 0.32, // Scale exponent for DSO size, larger = more non-linear
+				}, // ----------------------------------------------------------
+				constellations: { // Constellations
+					names: false,
+					lines: true,
+					lineStyle: {
+						stroke: "#fff",
+						width: 0.75,
+						opacity: 0.52
+					},
+					bounds: false
+				}, // ----------------------------------------------------------
+				mw: {
+					show: true, // Milky Way
+					style: {
+						fill: "#71111f",
+						opacity: 0.25
+					}
+				}, // ----------------------------------------------------------
+				advanced: true,
+				background: {
+					fill: "#071536",
+					opacity: 0, 
+					stroke: "#ffffff",
+					width: 0.25
+				}
+			});
+			window.onload = function exampleFunction() {
+				console.log(" ★ ★ ★ ");
+			}
+		</script>
+
+	</body>
+
+</html>

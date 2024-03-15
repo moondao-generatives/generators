@@ -1,0 +1,20 @@
+body {
+	background: #071536;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+body form {
+	background-color: #d0d0d0;
+	font-family: monospace;
+	font-weight: 200;
+	font-size: 17px;
+}
+
+#pfp {
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+	overflow:hidden;
+}
