@@ -3075,6 +3075,7 @@
 	function form(cfg) {
 		var config = settings.set(cfg);
 		var prj = Celestial.projections(), leo = Celestial.eulerAngles();
+		//var htmlContainerDiv document.getElementById("html-container");
 		var div = d3.select(parentElement + " ~ #celestial-form");
 		//if div doesn't exist, create it
 		if (div.size() < 1) {
@@ -4224,7 +4225,7 @@
 			const context = canvasT.getContext("2d");
 			context.filter = getComputedStyle(imgNode).filter;
 			
-			imgNode.setAttribute("crossOrigin", "anonymous");
+			//imgNode.setAttribute("crossOrigin", "anonymous");
 			
 			context.drawImage(imgNode, 0, 0, canvasT.width, canvasT.height);
 			const url = canvasT.toDataURL(`image/${format}`, quality);
@@ -4233,8 +4234,19 @@
 
 		function downloadImg() {
 			console.log("... downloading pfp");
-			const img = document.getElementById("process-image");
+			const fileName = "MoonDAO-PFP";
+			const pfpElement = document.getElementById('pfp');
+			html2canvas(pfpElement).then(function(canvas) {
+				const link = document.createElement('a');
+				link.href = canvas.toDataURL('image/jpeg');
+				link.download = fileName+'.jpg';
+				link.click();
+			});
+			/*
+			// old v
+			const img = document.getElementById("canvas-container");
 			screenshot(img,"png",0.95);
+			*/
 		}
 
 /* ------------------------------------------------------ */
