@@ -2,12 +2,13 @@
 
 var mwColor = getRandomHSLuvColor(80);
 var mwOpacity = 0.35; // 0.35
-const e=' * MoonDAO * PFP Generator * ';console.log("%c"+e,"background:"+mwColor+"; color: #fff");
+const e = ' * MoonDAO * PFP Generator * ';
+console.log("%c" + e, "background:" + mwColor + "; color: #fff");
 
 var defaultImages = [
-	"images/test-00.jpg", 
-	"images/test-01.jpg", 
-	"images/test-02.jpg", 
+	"images/test-00.jpg",
+	"images/test-01.jpg",
+	"images/test-02.jpg",
 	"images/test-03.jpg"
 ];
 
@@ -127,10 +128,16 @@ function getRandomColor() {
 }
 
 function getRandomHSLuvColor(saturation) {
-  var cHSLuv = new Hsluv();
-  cHSLuv.hsluv_h = Math.random() * 360;
-  cHSLuv.hsluv_l = Math.random() * 100;
-  cHSLuv.hsluv_s = saturation;
-  cHSLuv.hsluvToHex();
-  return cHSLuv.hex;
+	var cHSLuv = new Hsluv();
+	cHSLuv.hsluv_h = Math.random() * 360;
+	cHSLuv.hsluv_l = Math.random() * 100;
+	cHSLuv.hsluv_s = saturation;
+	cHSLuv.hsluvToHex();
+	return cHSLuv.hex;
+}
+
+let passedBlurValue = 70;
+
+function blurValue(val) {
+	passedBlurValue = val;
 }

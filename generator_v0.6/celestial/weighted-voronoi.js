@@ -25,6 +25,7 @@ function setup() {
 	console.log(" ★★ ");
 	const canvas = createCanvas(loadedIMG.width, loadedIMG.height);
 	canvas.parent('canvas-container');
+	imageMode(CENTER);
 	for (let i = 0; i < 320; i++) {
 		let x = random(width);
 		let y = random(height);
@@ -43,7 +44,12 @@ function setup() {
 
 function draw() {
 	clear();
-
+	
+	let contxt = canvas.getContext("2d",{willReadFrequently:true});
+	contxt.filter = 'blur('+passedBlurValue+'px)';
+	image(loadedIMG, width/2, height/2, 720, 720);
+	contxt.filter = 'blur(0px)';
+	
 	let polygons = voronoi.cellPolygons();
 	let cells = Array.from(polygons);
 

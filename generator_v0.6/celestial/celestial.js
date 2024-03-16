@@ -3182,7 +3182,7 @@
 				//col.append("label").attr("for", "stars-" + fld).html("Show");
 
 				selected = 0;
-				col.append("label").html(" ");
+				col.append("span").html(" ");
 				col.append("input").attr("type", "checkbox").attr("id", "stars-" + fld).property("checked", config.stars[fld]).on("change", apply);
 
 				sel = col.append("select").attr("id", "stars-" + fld + "Type").attr("class", function() {
@@ -3293,13 +3293,13 @@
 		//col.append("input").attr("type", "number").attr("id", "dsos-exponent").attr("class", "advanced").attr("title", "Size of the displayed symbol; exponent").attr("value", config.dsos.exponent).attr("max", "3").attr("min", "-1").attr("step", "0.01").on("change", apply);
 
 		col.append("br");
-		col.append("label").attr("class", "advanced").html(" * * * * * ");
+		col.append("span").attr("class", "advanced").html(" * * * * * ");
 
 		enable($form("dsos-show"));
 
 		// Constellations 
 		col = frm.append("div").attr("class", "col").attr("id", "constellations");
-		col.append("label").attr("class", "header").html("Constellations");
+		col.append("span").attr("class", "header").html("Constellations");
 		//col.append("input").attr("type", "checkbox").attr("id", "constellations-show").property("checked", config.constellations.show).on("change", apply);
 
 
@@ -3349,26 +3349,24 @@
 
 		// graticules & planes 
 		col = frm.append("div").attr("class", "col").attr("id", "lines");
-		col.append("label").attr("class", "header").html("Lines");
-
+		col.append("span").attr("class", "header").html("Lines");
+		
+		/*
 		col.append("label").attr("title", "Latitude/longitude grid lines").attr("for", "lines-graticule").html("Graticule");
 		col.append("input").attr("type", "checkbox").attr("id", "lines-graticule-show").property("checked", config.lines.graticule.show).on("change", apply);
-
 		col.append("label").attr("for", "lines-equatorial").html("Equator");
 		col.append("input").attr("type", "checkbox").attr("id", "lines-equatorial-show").property("checked", config.lines.equatorial.show).on("change", apply);
-
 		col.append("label").attr("for", "lines-ecliptic").html("Ecliptic");
 		col.append("input").attr("type", "checkbox").attr("id", "lines-ecliptic-show").property("checked", config.lines.ecliptic.show).on("change", apply);
-
 		col.append("label").attr("for", "lines-galactic").html("Galactic plane");
 		col.append("input").attr("type", "checkbox").attr("id", "lines-galactic-show").property("checked", config.lines.galactic.show).on("change", apply);
-
 		col.append("label").attr("for", "lines-supergalactic").html("Supergalactic plane");
 		col.append("input").attr("type", "checkbox").attr("id", "lines-supergalactic-show").property("checked", config.lines.supergalactic.show).on("change", apply);
-
+		*/
+		
 		// Other
 		col = frm.append("div").attr("class", "col").attr("id", "other");
-		col.append("label").attr("class", "header").html("Other");
+		col.append("span").attr("class", "header").html("Other");
 
 		col.append("label").attr("for", "mw-show").html("Milky Way");
 		col.append("input").attr("type", "checkbox").attr("id", "mw-show").property("checked", config.mw.show).on("change", apply);
@@ -3420,7 +3418,7 @@
 		sel.property("selectedIndex", selected);
 
 		col = frm.append("div").attr("class", "col").attr("id", "download");
-		col.append("label").attr("class", "header").html("Download");
+		col.append("span").attr("class", "header").html("Download");
 
 		col.append("input").attr("type", "button").attr("id", "download-png").attr("value", "PNG Image").on("click", function() {
 			var a = d3.select("body").append("a").node(),
@@ -4071,9 +4069,14 @@
 		var col = frm.append("div").attr("class", "col").attr("id", "location").style("display", "none");
 
 		//MoonDAO PFP UI
-		col.append("label").attr("title", "Background Image").html("Image ");
-		col.append("input").attr("type", "file").attr("name", "UPLOAD").attr("accept", "image/*").attr("id", "upload");//.on("click", uploadImg);
+		col.append("span").attr("title", "Background Image").html("Image ");
+		col.append("input").attr("type", "file").attr("name", "UPLOAD").attr("accept", "image/*").attr("id", "upload");
+		
+		col.append("label").attr("title", "Blur Amount").attr("for", "blur").html(" Blur ");
+		col.append("input").attr("type", "range").attr("id", "blur").attr("name", "blur").attr("min", "0").attr("max", "90").attr("value", "70").attr("step", "1").attr("oninput","blurValue(this.value)");
+		
 		col.append("input").attr("type", "button").attr("value", "DOWNLOAD").attr("id", "download").on("click", downloadImg);
+		col.append("input").attr("type", "button").attr("value", "MINT").attr("id", "mint").on("click", mintImg);
 		
 		col.append("br");
 		col.append("br");
@@ -4242,11 +4245,17 @@
 				link.download = fileName+'.jpg';
 				link.click();
 			});
-			/*
-			// old v
-			const img = document.getElementById("canvas-container");
-			screenshot(img,"png",0.95);
-			*/
+		}
+
+		function mintImg() {
+			console.log("... minting pfp");
+			const fileName = getRandomColor();
+			const pfpElement = document.getElementById('pfp');
+			html2canvas(pfpElement).then(function(canvas) {
+				const dataURL = canvas.toDataURL('image/jpeg');
+				console.log(dataURL);
+				return dataURL;
+			});
 		}
 
 /* ------------------------------------------------------ */
@@ -4950,6 +4959,7 @@
 
 		return kepler;
 	};
+	
 	var Moon = {
 		elements: function(dat) {
 			var t = (dat.jd - 2451545) / 36525,

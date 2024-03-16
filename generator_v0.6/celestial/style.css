@@ -49,10 +49,28 @@ body form {
 }
 
 #process-image {
-	filter:blur(40px);
+	/*filter:blur(40px);*/
+	display: none;
 	z-index: 0;
 }
 
 #canvas-container {
+	will-change: transform;
 	z-index: 1;
+}
+
+#defaultCanvas0 {
+	will-change: transform;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+}
+
+.p5Canvas {
+	will-change: transform;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
 }

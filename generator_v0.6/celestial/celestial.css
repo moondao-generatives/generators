@@ -11,7 +11,7 @@
 	margin: 0;
 	padding: 0;
 	position: absolute;
-	/*top: 50px;*/
+	top: 10px;
 	left: 0;
 	overflow: visible;
 }
@@ -56,7 +56,7 @@
 	margin: 0;
 	padding: 0;
 	position: absolute;
-	top: 790px;
+	top: 740px;
 	left: 0;
 }
 
@@ -185,9 +185,21 @@ input[type="number"]::-webkit-outer-spin-button {
 	margin-left: 2px;
 }
 
+#celestial-form input#upload {
+	width: 250px;
+}
+
+#celestial-form input#download {
+	width: 100px;
+}
+
+#celestial-form input#mint {
+	width: 50px;
+}
+
+#celestial-form input#mint,
 #celestial-form input#upload,
 #celestial-form input#download {
-	width: 80px;
 	margin-left: 2px;
 	float: none;
 }
@@ -227,6 +239,7 @@ input[type="number"]::-webkit-outer-spin-button {
 #celestial-form select,
 #celestial-form input#now,
 #celestial-form input#here,
+#celestial-form input#mint,
 #celestial-form input#download,
 #celestial-form input#show,
 #celestial-form input#download-png,
@@ -240,6 +253,7 @@ input[type="number"]::-webkit-outer-spin-button {
 	border-radius: 3px;
 }
 
+#celestial-form input#mint,
 #celestial-form input#upload,
 #celestial-form input#download,
 #celestial-form input#now,
@@ -262,6 +276,11 @@ input[type="number"]::-webkit-outer-spin-button {
 
 #celestial-form input+span {
 	margin: 0 4px 0 2px;
+}
+
+#celestial-form input[type="range"] {
+	width: 100px;
+	accent-color: #00f;
 }
 
 /* ---------------------------------------------- */
