@@ -22,7 +22,7 @@ document.getElementById("process-image").src = randomImage;
 Celestial.display({
 	location: true,
 	projection: "airy",
-	datapath: "../stars-data/", // Path/URL to data files
+	datapath: "stars-data/", // Path/URL to data files
 	controls: false, // zoom controls
 	form: true,
 	formFields: {
