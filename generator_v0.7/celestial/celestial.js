@@ -34,14 +34,17 @@
 		cfg = settings.set(config).applyDefaults(config);
 		if (isNumber(cfg.zoomextend)) zoomextent = cfg.zoomextend;
 		if (isNumber(cfg.zoomlevel)) zoomlevel = cfg.zoomlevel;
-
+		
+		console.log("container: "+cfg.container);
 		var parent = document.getElementById(cfg.container);
 		console.log("parent: "+parent);
 		if (parent) {
+			console.log("parent?");
 			parentElement = "#" + cfg.container;
 			var st = window.getComputedStyle(parent, null);
 			if (!parseInt(st.width) && !cfg.width) parent.style.width = px(parent.parentNode.clientWidth);
 		} else {
+			console.log("else?");
 			parentElement = "body";
 			parent = null;
 		}

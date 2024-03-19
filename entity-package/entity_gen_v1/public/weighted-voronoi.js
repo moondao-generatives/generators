@@ -1,14 +1,19 @@
 // Weighted Voronoi Stippling by Daniel Shiffman [MIT]
 /* Edited in 2024 for MoonDAO by Santiago Itzcoatl */
 
+// console.log("weighted-voronoi.js");
+
 let points = [];
 let delaunay, voronoi;
 let loadedIMG;
 
 function preload() {
+
+	console.log("src " + document.getElementById("process-image").src);
+
 	urlIMG = document.getElementById("process-image").src;
 	loadedIMG = loadImage(urlIMG, imgLoadSuccess, imgLoadFailure);
-	console.log("— bg img loaded: "+urlIMG);
+	console.log("— bg img loaded: " + urlIMG);
 	console.log("waiting...");
 }
 
@@ -44,12 +49,14 @@ function setup() {
 
 function draw() {
 	clear();
-	
-	let contxt = canvas.getContext("2d",{willReadFrequently:true});
-	contxt.filter = 'blur('+passedBlurValue+'px)';
-	image(loadedIMG, width/2, height/2, 720, 720);
+
+	let contxt = canvas.getContext("2d", {
+		willReadFrequently: true
+	});
+	contxt.filter = 'blur(' + passedBlurValue + 'px)';
+	image(loadedIMG, width / 2, height / 2, 720, 720);
 	contxt.filter = 'blur(0px)';
-	
+
 	let polygons = voronoi.cellPolygons();
 	let cells = Array.from(polygons);
 

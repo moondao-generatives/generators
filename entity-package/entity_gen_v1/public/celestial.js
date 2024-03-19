@@ -8,6 +8,8 @@
 		container: null,
 		data: []
 	};
+	
+	// console.log("celestial.js");
 
 	var 
 		ANIMDISTANCE = 0.035,  // Rotation animation threshold, ~2deg in radians
@@ -35,9 +37,16 @@
 		if (isNumber(cfg.zoomextend)) zoomextent = cfg.zoomextend;
 		if (isNumber(cfg.zoomlevel)) zoomlevel = cfg.zoomlevel;
 
-		//var parent = document.getElementById(cfg.container);
 		var parent = document.getElementById(cfg.container);
-		console.log("parent: "+parent);
+		//var parent = document.getElementById('html-container');
+		//var contentent = document.getElementById('html-container');
+		//console.log("parent: "+parent);
+		
+		/*
+		parentElement = "#" + parent;
+		var st = window.getComputedStyle(parent, null);
+		*/
+		
 		if (parent) {
 			parentElement = "#" + cfg.container;
 			var st = window.getComputedStyle(parent, null);

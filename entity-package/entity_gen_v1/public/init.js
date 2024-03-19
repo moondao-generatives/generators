@@ -2,23 +2,8 @@
 
 var mwColor = getRandomHSLuvColor(80);
 var mwOpacity = 0.35; // 0.35
-const e = ' * MoonDAO * PFP Generator * ';
-console.log("%c" + e, "background:" + mwColor + "; color: #fff");
 
-var defaultImages = [
-	"./images/test-00.jpg",
-	"./images/test-01.jpg",
-	"./images/test-02.jpg",
-	"./images/test-03.jpg"
-];
-
-var randomIndex = Math.floor(Math.random() * defaultImages.length);
-var randomImage = defaultImages[randomIndex];
-
-console.log("hello");
-/*document.getElementById("process-image").src = randomImage;*/
-
-// - - -
+// console.log("init.js");
 
 Celestial.display({
 	location: true,
