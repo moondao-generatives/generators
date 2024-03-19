@@ -36,6 +36,7 @@
 		if (isNumber(cfg.zoomlevel)) zoomlevel = cfg.zoomlevel;
 
 		var parent = document.getElementById(cfg.container);
+		console.log("parent: "+parent);
 		if (parent) {
 			parentElement = "#" + cfg.container;
 			var st = window.getComputedStyle(parent, null);
