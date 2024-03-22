@@ -8,10 +8,10 @@ body {
 }
 
 body form {
-	background-color: #d0d0d0;
-	font-family: monospace;
+	background-color: #111827;
+	font-family: 'Roboto Mono', 'sans-serif';
 	font-weight: 200;
-	font-size: 17px;
+	font-size: 17px/1;
 }
 
 #html-container {

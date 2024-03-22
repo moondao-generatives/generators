@@ -3163,7 +3163,7 @@
 		col.append("input").attr("type", "checkbox").attr("id", "stars-show").property("checked", config.stars.show).on("change", apply);
 		col.append("label").attr("class", "header").attr("for", "stars-show").html(" Stars");
 		
-		col.append("label").attr("title", "Stars Limit").attr("for", "stars-limit").html(" Limit:");
+		col.append("label").attr("title", "Stars Limit").attr("for", "stars-limit").attr("class", "secondLabel").html(" Limit:");
 		col.append("input").attr("type", "range").attr("id", "stars-limit").attr("name", "StarsLimit").attr("min", "1").attr("max", "6").attr("value", config.stars.limit).attr("step", "0.5").on("change", apply);
 
 		var names = formats.starnames[config.culture] || formats.starnames.iau;
@@ -3206,7 +3206,7 @@
 		
 		// col.append("br");
 		
-		col.append("label").attr("title", "Stars Size").attr("for", "stars-size").html("Size: ");
+		col.append("label").attr("title", "Stars Size").attr("for", "stars-size").attr("class", "secondLabel").html("Size:");
 		col.append("input").attr("type", "range").attr("id", "stars-size").attr("name", "StarsSize").attr("min", "5").attr("max", "15").attr("value", config.stars.size).attr("step", "0.25").on("change", apply);
 		
 		//col.append("br");
@@ -3993,12 +3993,14 @@
 		var col = frm.append("div").attr("class", "col").attr("id", "location").style("display", "none");
 
 		//MoonDAO PFP UI
-		col.append("span").attr("title", "Background Image").html("Image ");
+		col.append("label").attr("title", "Background Image").html("Image ");
 		col.append("input").attr("type", "file").attr("name", "UPLOAD").attr("accept", "image/*").attr("id", "upload");
 		col.append("label").attr("title", "Blur Amount").attr("for", "blur").html(" Blur ");
 		col.append("input").attr("type", "range").attr("id", "blur").attr("name", "blur").attr("min", "0").attr("max", "90").attr("value", "70").attr("step", "1").attr("oninput","blurValue(this.value)");
 		col.append("input").attr("type", "button").attr("value", "DOWNLOAD").attr("id", "download").on("click", downloadImg);
+		/*
 		col.append("input").attr("type", "button").attr("value", "DATA").attr("id", "imgData").on("click", passImgData);
+		*/
 		
 		//col.append("br");
 		

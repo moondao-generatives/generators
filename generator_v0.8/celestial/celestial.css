@@ -36,7 +36,7 @@
 #d3-celestial-footer {
 	text-align: center;
 	color: #666;
-	font: 10pt/1 'Arial Unicode MS', Arial, Helvetica, sans-serif;
+	font: 10pt/1 'Roboto Mono', 'sans-serif', monospace;
 }
 
 #d3-celestial-footer a {
@@ -48,7 +48,7 @@
 /* Celestial form */
 
 #celestial-form {
-	color: #00f;
+	color: #3b82f6;
 	display: block;
 	width: 720px;
 	height: 100%;
@@ -113,6 +113,9 @@
 /* ---------------------------------------------- */
 /* Celestial form inputs */
 
+.secondLabel label {
+	color: #ff0000;
+}
 
 #lat, #lon, #datepick, #LocationLabel, #dateTimeLabel, #datetime, #planets-symbolType, #planets-names, #planets-namesType, #planets-show, #planets-show-label, #stars-designationType {
 	display: none;
@@ -153,30 +156,35 @@ input[type="number"]::-webkit-outer-spin-button {
 	width: 48px;
 	vertical-align: -3px;
 	height: 22px;
-	background: #fff;
+	background: #D7594F;
 }
 
 #celestial-form input[type='file'] {
 	width: 64px;
 	padding-bottom: 1px;
-	color: #b03;
-	background: #f7f7f7;
+	color: #d97706;
+	background: #071732;
+}
+
+#file-upload-button input[type='button'] {
+	color: #d97706;
+	background: #071732;
 }
 
 #celestial-form input[type='button'] {
 	width: 64px;
 	padding-bottom: 1px;
 	margin-top: 4px;
-	color: #b03;
-	background: #f7f7f7;
+	color: #d97706;
+	background: #071732;
 }
 
 #celestial-form select option {
-	color: #b03;
+	color: #d97706;
 }
 
 #celestial-form select option[value='---'] {
-	color: #b03;
+	color: #F9B95C;
 }
 
 #celestial-form input#download-png,
@@ -277,10 +285,13 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 #celestial-form label {
+	color: #3b82f6;
+	font-weight: bold;
 	margin: 0 2px 0 8px;
 }
 
 #celestial-form label.header {
+	color: #3b82f6;
 	font-weight: bold;
 }
 
@@ -309,7 +320,7 @@ input[type="number"]::-webkit-outer-spin-button {
 	background: #fff;
 	opacity: 0;
 	transition: .6s ease-in opacity;
-	font: 13px/1 sans-serif;
+	font: 13px/1 'Roboto Mono', 'sans-serif';
 	z-index: 7;
 }
 
@@ -443,7 +454,7 @@ input[type="number"]::-webkit-outer-spin-button {
 	border: 1px solid #000;
 	border-radius: 1px;
 	position: absolute;
-	font: normal bold 10px/1 Consolas, Courier, 'Courier New', monospace;
+	font: normal bold 10px/1 'Roboto Mono', 'sans-serif', monospace;
 	cursor: pointer;
 }
 
@@ -484,7 +495,7 @@ input[type="number"]::-webkit-outer-spin-button {
 	border: 2px solid #f00;
 	border-radius: 3px;
 	font-weight: normal;
-	display: block;
+	display: none;
 	top: -9999px;
 	left: -9999px;
 	opacity: 0;
