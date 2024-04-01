@@ -3160,10 +3160,14 @@
 
 		// Stars - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 		col = frm.append("div").attr("class", "col").attr("id", "stars");
+		col.append("label").attr("class", "header").attr("for", "stars-show").html("Stars: ");
+		col.append("br");
+		col.append("br");
 		col.append("input").attr("type", "checkbox").attr("id", "stars-show").property("checked", config.stars.show).on("change", apply);
-		col.append("label").attr("class", "header").attr("for", "stars-show").html(" Stars");
 		
-		col.append("label").attr("title", "Stars Limit").attr("for", "stars-limit").attr("class", "secondLabel").html(" Limit:");
+		col.append("br");
+		
+		/*col.append("label").attr("title", "Stars Limit").attr("for", "stars-limit").html(" Limit:");*/
 		col.append("input").attr("type", "range").attr("id", "stars-limit").attr("name", "StarsLimit").attr("min", "1").attr("max", "6").attr("value", config.stars.limit).attr("step", "0.5").on("change", apply);
 
 		var names = formats.starnames[config.culture] || formats.starnames.iau;
@@ -3204,9 +3208,9 @@
 			}
 		}
 		
-		// col.append("br");
+		col.append("br");
 		
-		col.append("label").attr("title", "Stars Size").attr("for", "stars-size").attr("class", "secondLabel").html("Size:");
+		/*col.append("label").attr("title", "Stars Size").attr("for", "stars-size").html("Size:");*/
 		col.append("input").attr("type", "range").attr("id", "stars-size").attr("name", "StarsSize").attr("min", "5").attr("max", "15").attr("value", config.stars.size).attr("step", "0.25").on("change", apply);
 		
 		//col.append("br");
@@ -3993,11 +3997,26 @@
 		var col = frm.append("div").attr("class", "col").attr("id", "location").style("display", "none");
 
 		//MoonDAO PFP UI
-		col.append("label").attr("title", "Background Image").html("Image ");
-		col.append("input").attr("type", "file").attr("name", "UPLOAD").attr("accept", "image/*").attr("id", "upload");
+		col.append("span").attr("class", "header").html("Image: ");
+		col.append("br");
+		
+		col.append("br");
+		col.append("input").attr("type", "button").attr("value", "UPLOAD IMG").attr("id", "upload").on("click", uploadImg);
+		
+		col.append("input").attr("type", "file").attr("name", "UPLOAD").attr("accept", "image/*").attr("id", "uploadHidden");
+		
+		//col.append("br");
+		//col.append("br");
 		col.append("label").attr("title", "Blur Amount").attr("for", "blur").html(" Blur ");
 		col.append("input").attr("type", "range").attr("id", "blur").attr("name", "blur").attr("min", "0").attr("max", "90").attr("value", "70").attr("step", "1").attr("oninput","blurValue(this.value)");
-		col.append("input").attr("type", "button").attr("value", "DOWNLOAD").attr("id", "download").on("click", downloadImg);
+		
+		col.append("br");
+		col.append("br");
+		col.append("input").attr("type", "button").attr("value", "DOWNLOAD IMG").attr("id", "download").on("click", downloadImg);
+		
+		col.append("br");
+		col.append("br");
+		
 		/*
 		col.append("input").attr("type", "button").attr("value", "DATA").attr("id", "imgData").on("click", passImgData);
 		*/
@@ -4110,66 +4129,6 @@
 		}
 
 /* ------------------------------------------------------ */
-/* PFP image Functions */
-
-		document.getElementById("upload").addEventListener("change", function(e) {
-			var file = e.target.files[0];
-			var reader = new FileReader();
-			reader.onload = function(event) {
-				document.getElementById("process-image").src = event.target.result;
-				console.log("new img uploaded");
-				preload();
-			};
-			reader.readAsDataURL(file);
-		});
-
-		function downloadScreenShot(url, fullName) {
-			const anchor = document.createElement('a');
-			anchor.href = url;
-			anchor.style.display = 'none';
-			anchor.setAttribute('download', fullName);
-			document.body.appendChild(anchor);
-			anchor.click();
-			document.body.removeChild(anchor);
-		}
-
-		function screenshot(imgNode, format = "jpg", quality = 0.97, name="MoonDAO-PFP") {
-			const canvasT = document.createElement("canvas");
-			canvasT.width = imgNode.width;
-			canvasT.height = imgNode.height;
-			
-			const context = canvasT.getContext("2d");
-			context.filter = getComputedStyle(imgNode).filter;
-			
-			//imgNode.setAttribute("crossOrigin", "anonymous");
-			
-			context.drawImage(imgNode, 0, 0, canvasT.width, canvasT.height);
-			const url = canvasT.toDataURL(`image/${format}`, quality);
-			downloadScreenShot(url, `${name}.${format}`);
-		}
-
-		function downloadImg() {
-			console.log("... downloading pfp");
-			const fileName = "MoonDAO-PFP";
-			const pfpElement = document.getElementById('pfp');
-			html2canvas(pfpElement).then(function(canvas) {
-				const link = document.createElement('a');
-				link.href = canvas.toDataURL('image/jpeg');
-				link.download = fileName+'.jpg';
-				link.click();
-			});
-		}
-
-		function passImgData() {
-			console.log("... passing pfp img data");
-			const fileName = getRandomColor();
-			const pfpElement = document.getElementById('pfp');
-			html2canvas(pfpElement).then(function(canvas) {
-				const dataURL = canvas.toDataURL('image/jpeg');
-				console.log(dataURL);
-				return dataURL;
-			});
-		}
 
 /* ------------------------------------------------------ */
 

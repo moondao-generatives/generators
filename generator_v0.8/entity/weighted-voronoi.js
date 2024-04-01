@@ -3,30 +3,40 @@
 
 let points = [];
 let delaunay, voronoi;
-let loadedIMG;
+
+// - - preload
 
 function preload() {
 	urlIMG = document.getElementById("process-image").src;
 	loadedIMG = loadImage(urlIMG, imgLoadSuccess, imgLoadFailure);
-	console.log("— bg img loaded: "+urlIMG);
-	console.log("waiting...");
+	// changeBioText(defaultBio);
+	// console.log("— bg img loaded: " + urlIMG); //base64
+	// console.log("wait...");
 }
 
 function imgLoadSuccess() {
+	// img setup:
 	loadedIMG.resize(720, 720);
-	console.log('— bg img resized');
+	colorPalette = getColorPalette(loadedIMG, 3);
+	
+	//console.log(colorPalette);
+	//console.log('— img resized');
+	loader = document.getElementById("loadIndicator");
+	loader.style.display= "none";
 }
 
 function imgLoadFailure(event) {
 	console.error('— error while loading img', event);
 }
 
+// -- setup
+
 function setup() {
-	console.log(" ★★ ");
+	console.log(" ★ p5js ★ ");
 	const canvas = createCanvas(loadedIMG.width, loadedIMG.height);
 	canvas.parent('canvas-container');
 	imageMode(CENTER);
-	for (let i = 0; i < 320; i++) {
+	for (let i = 0; i < 290; i++) {
 		let x = random(width);
 		let y = random(height);
 		let col = loadedIMG.get(x, y);
@@ -40,16 +50,22 @@ function setup() {
 	delaunay = calculateDelaunay(points);
 	voronoi = delaunay.voronoi([0, 0, width, height]);
 	//noLoop();
+	
+	console.log(" ★★★ ready ★★★ ");
 }
+
+// -- main loop
 
 function draw() {
 	clear();
-	
-	let contxt = canvas.getContext("2d",{willReadFrequently:true});
-	contxt.filter = 'blur('+passedBlurValue+'px)';
-	image(loadedIMG, width/2, height/2, 720, 720);
+
+	let contxt = canvas.getContext("2d", {
+		willReadFrequently: true
+	});
+	contxt.filter = 'blur(' + passedBlurValue + 'px)';
+	image(loadedIMG, width / 2, height / 2, 720, 720);
 	contxt.filter = 'blur(0px)';
-	
+
 	let polygons = voronoi.cellPolygons();
 	let cells = Array.from(polygons);
 
@@ -98,8 +114,8 @@ function draw() {
 
 	for (let i = 0; i < points.length; i++) {
 		let v = points[i];
-		let nx = 2;
-		let mx = 40;
+		let nx = 3;
+		let mx = 37;
 		let col = loadedIMG.get(v.x, v.y);
 		//stroke(0);
 		stroke(col);
@@ -118,16 +134,4 @@ function calculateDelaunay(points) {
 		pointsArray.push(v.x, v.y);
 	}
 	return new d3.Delaunay(pointsArray);
-}
-
-function hexToRgb(hex) {
-	hex = hex.replace('#', '');
-
-	var bigint = parseInt(hex, 16);
-
-	var r = (bigint >> 16) & 255;
-	var g = (bigint >> 8) & 255;
-	var b = bigint & 255;
-
-	return color(r, g, b);
 }

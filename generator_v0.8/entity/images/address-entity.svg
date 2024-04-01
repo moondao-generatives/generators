@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720">
+	<defs>
+		<g id="EF">
+			<polygon class="address-geometric" points="360 190.8 373.77 185.041 374.264 178.76 360 171.9 345.736 178.76 346.23 185.041 360 190.8"/>
+		</g>
+		<g id="EE">
+			<polygon class="address-geometric" points="347.713 203.883 360 197.1 372.287 203.883 374.264 178.76 360 184.5 345.736 178.76 347.713 203.883"/>
+		</g>
+		<g id="ED">
+			<polygon class="address-geometric" points="345.242 172.48 360 165.6 374.758 172.48 374.264 178.76 360 184.5 345.736 178.76 345.242 172.48"/>
+		</g>
+		<g id="EC">
+			<polygon class="address-geometric" points="347.219 197.602 346.725 191.322 360 184.5 373.275 191.322 372.781 197.602 360 203.4 347.219 197.602"/>
+		</g>
+		<g id="EB">
+			<polygon class="address-geometric" points="360 216 371.792 210.163 373.275 191.322 360 197.1 346.725 191.322 348.208 210.163 360 216"/>
+		</g>
+		<g id="EA">
+			<polygon class="address-geometric" points="360 209.7 347.713 203.883 346.23 185.041 360 178.2 373.77 185.041 372.287 203.883 360 209.7"/>
+		</g>
+		<g id="E9">
+			<polygon class="address-geometric" points="375.252 166.199 360 171.9 344.748 166.199 345.242 172.48 360 178.2 374.758 172.48 375.252 166.199"/>
+		</g>
+		<g id="E8">
+			<polygon class="address-geometric" points="347.219 197.602 360 190.8 372.781 197.602 372.287 203.883 360 209.7 347.713 203.883 347.219 197.602"/>
+		</g>
+		<g id="E7">
+			<polygon class="address-geometric" points="360 178.2 345.242 172.48 360 165.6 374.758 172.48 360 178.2"/>
+		</g>
+		<g id="E6">
+			<polygon class="address-geometric" points="360 171.9 345.736 178.76 346.23 185.041 360 178.2 373.77 185.041 374.264 178.76 360 171.9"/>
+		</g>
+		<g id="E5">
+			<polygon class="address-geometric" points="347.219 197.602 360 203.4 372.781 197.602 373.275 191.322 360 197.1 346.725 191.322 347.219 197.602"/>
+		</g>
+		<g id="E4">
+			<polygon class="address-geometric" points="348.702 216.444 360 209.7 371.298 216.444 372.287 203.883 360 209.7 347.713 203.883 348.702 216.444"/>
+		</g>
+		<g id="E3">
+			<polygon class="address-geometric" points="360 184.5 374.264 178.76 373.275 191.322 360 197.1 346.725 191.322 345.736 178.76 360 184.5"/>
+		</g>
+		<g id="E2">
+			<polygon class="address-geometric" points="346.725 191.322 360 184.5 373.275 191.322 360 197.1 346.725 191.322"/>
+		</g>
+		<g id="E1">
+			<polygon class="address-geometric" points="347.713 203.883 360 197.1 372.287 203.883 360 209.7 347.713 203.883"/>
+		</g>
+		<g id="E0">
+			<polygon class="address-geometric" points="346.23 185.041 347.219 197.602 360 203.4 372.781 197.602 373.77 185.041 360 178.2 346.23 185.041"/>
+		</g>
+		<style type="text/css">
+			<![CDATA[
+			#geometric-entity {
+				isolation: isolate;
+			}
+
+			.address-geometric {
+				fill: #696969;
+				opacity: 0.86;
+				mix-blend-mode: difference;
+			}
+
+			]]>
+		</style>
+	</defs>
+	<title>address-entity</title>
+	<g id="geometric-entity">
+		<use href="E0"></use>
+	</g>
+
+</svg>

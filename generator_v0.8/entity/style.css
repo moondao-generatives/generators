@@ -4,7 +4,7 @@ body {
 	background: #071536;
 	margin: 0;
 	padding: 0;
-	text-align: center;
+	text-align: left;
 }
 
 body form {
@@ -33,6 +33,7 @@ body form {
 	max-width: 900px;
 	margin: 0 auto;
 	overflow: visible;
+	/*background-color: black;*/
 }
 
 #process-image, #canvas-container {
@@ -53,6 +54,52 @@ body form {
 	display: none;
 	z-index: 0;
 }
+
+#loadIndicator {
+	width: 720px;
+	height: 720px;
+	min-width: 200px;
+	max-width: 900px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	mix-blend-mode: normal;
+	/*top: 50px;*/
+	left: 0;
+	display: block;
+	z-index: 3;
+}
+
+#bioText {
+	width: 720px;
+	height: 720px;
+	min-width: 200px;
+	max-width: 900px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	mix-blend-mode: normal;
+	/*top: 50px;*/
+	left: 0;
+	display: block;
+	z-index: 3;
+}
+
+#addressEntity {
+	width: 720px;
+	height: 720px;
+	min-width: 200px;
+	max-width: 900px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	mix-blend-mode: normal;
+	/*top: 50px;*/
+	left: 0;
+	display: block;
+	z-index: 2;
+}
+
 
 #canvas-container {
 	will-change: transform;

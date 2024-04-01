@@ -1,7 +1,6 @@
 /* Copyright 2015-16 Olaf Frohn https://github.com/ofrohn, see LICENSE */
 /* Edited in 2024 for MoonDAO by Santiago Itzcoatl */
 /* ---------------------------------------------- */
-
 /* Celestial map */
 #celestial-map {
 	width: 720px;
@@ -12,7 +11,7 @@
 	padding: 0;
 	position: absolute;
 	top: 10px;
-	left: 0;
+	left: 10px;
 	overflow: visible;
 }
 
@@ -34,7 +33,7 @@
 }
 
 #d3-celestial-footer {
-	text-align: center;
+	text-align: left;
 	color: #666;
 	font: 10pt/1 'Roboto Mono', 'sans-serif', monospace;
 }
@@ -46,7 +45,6 @@
 
 /* ---------------------------------------------- */
 /* Celestial form */
-
 #celestial-form {
 	color: #3b82f6;
 	display: block;
@@ -84,7 +82,7 @@
 	margin-top: 4px;
 }
 
-#celestial-form #datepick  {
+#celestial-form #datepick {
 	position: relative;
 	display: inline-block;
 	_vertical-align: 8px;
@@ -112,11 +110,6 @@
 
 /* ---------------------------------------------- */
 /* Celestial form inputs */
-
-.secondLabel label {
-	color: #ff0000;
-}
-
 #lat, #lon, #datepick, #LocationLabel, #dateTimeLabel, #datetime, #planets-symbolType, #planets-names, #planets-namesType, #planets-show, #planets-show-label, #stars-designationType {
 	display: none;
 }
@@ -136,14 +129,14 @@ input[type="number"]::-webkit-outer-spin-button {
 
 #celestial-form input[type='number'] {
 	width: 48px;
-	height: 18px;
+	height: 28px;
 	text-align: right;
 	padding: 0;
 }
 
 #celestial-form input[type='text'] {
 	width: 194px;
-	height: 18px;
+	height: 28px;
 	text-align: left;
 	padding-left: 2px;
 }
@@ -160,8 +153,8 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 #celestial-form input[type='file'] {
-	width: 64px;
-	padding-bottom: 1px;
+	display: none;
+	width: 200px;
 	color: #d97706;
 	background: #071732;
 }
@@ -172,9 +165,20 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 #celestial-form input[type='button'] {
+	font-size: 8px;
 	width: 64px;
 	padding-bottom: 1px;
 	margin-top: 4px;
+	color: #d97706;
+	background: #071732;
+}
+
+#celestial-form label.uploadButton {
+	font-size: 10px;
+	border: 1px solid #00f;
+	border-radius: 3px;
+	width: 200px;
+	margin-top: 40px;
 	color: #d97706;
 	background: #071732;
 }
@@ -190,7 +194,7 @@ input[type="number"]::-webkit-outer-spin-button {
 #celestial-form input#download-png,
 #celestial-form input#download-svg {
 	display: inline-block;
-	text-align: center;
+	text-align: left;
 	margin-left: 4px;
 	width: 108px;
 	height: 24px;
@@ -204,8 +208,12 @@ input[type="number"]::-webkit-outer-spin-button {
 	margin-left: 2px;
 }
 
+#celestial-form input#uploadHidden {
+	display: none;
+}
+
 #celestial-form input#upload {
-	width: 250px;
+	width: 100px;
 }
 
 #celestial-form input#download {
@@ -224,7 +232,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 #celestial-form input#now,
-#celestial-form input#here{
+#celestial-form input#here {
 	width: 52px;
 	margin-left: 2px;
 	float: none;
@@ -247,13 +255,22 @@ input[type="number"]::-webkit-outer-spin-button {
 #celestial-form input[type='text']:disabled,
 #celestial-form input[type='number']:disabled,
 #celestial-form input[type='color']:disabled {
-	color: #b33;
+	color: #f33;
 	border: 1px solid #f22;
 	background: #eee
 }
 
 #celestial-form select {
-	display:none;
+	display: none;
+}
+
+#celestial-form input[type="checkbox"] {
+	background-color: #071732;
+	margin: 0;
+	font: inherit;
+	width: 1.3em;
+	height: 1.3em;
+	border-radius: 0.15em;
 }
 
 /*#celestial-form select*/
@@ -263,6 +280,7 @@ input[type="number"]::-webkit-outer-spin-button {
 #celestial-form input#now,
 #celestial-form input#here,
 #celestial-form input#imgData,
+#celestial-form input#upload,
 #celestial-form input#download,
 #celestial-form input#show,
 #celestial-form input#download-png,
@@ -271,6 +289,7 @@ input[type="number"]::-webkit-outer-spin-button {
 	border-radius: 3px;
 	height: 24px;
 }
+
 #celestial-form input#upload {
 	border: 1px solid #00f;
 	border-radius: 3px;
@@ -284,7 +303,9 @@ input[type="number"]::-webkit-outer-spin-button {
 	font-weight: 800;
 }
 
+
 #celestial-form label {
+	font-size: 15px;
 	color: #3b82f6;
 	font-weight: bold;
 	margin: 0 2px 0 8px;
@@ -297,6 +318,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 #celestial-form label:first-child,
 #celestial-form br+label {
+	color: #3b82f6;
 	margin-left: 0;
 }
 
@@ -315,12 +337,12 @@ input[type="number"]::-webkit-outer-spin-button {
 	position: absolute;
 	top: -9999px;
 	width: 193px;
-	text-align: center;
+	text-align: left;
 	border: 1px solid #000;
 	background: #fff;
 	opacity: 0;
 	transition: .6s ease-in opacity;
-	font: 13px/1 'Roboto Mono', 'sans-serif';
+	font: 10px/1 'Roboto Mono', 'sans-serif';
 	z-index: 7;
 }
 
@@ -408,7 +430,6 @@ input[type="number"]::-webkit-outer-spin-button {
 	border: 1px solid #fff;
 	color: #000;
 	font-weight: bold;
-	text-align: right;
 	vertical-align: middle;
 	padding: 2px 4px 2px 0;
 	cursor: pointer;

@@ -1,0 +1,42 @@
+<svg id="Layer_01" data-name="Layer 01" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 720 720">
+	<defs>
+		<g id="loadingBar">
+			<path class="lb" d="M469.562,324.4a115.2,115.2,0,0,0-219.123,0l27.39,8.9a86.4,86.4,0,0,1,164.343,0Z"/>
+		</g>
+		<g id="loadingPoint"></g>
+		<style type="text/css">
+			<![CDATA[
+			.lpp {
+				fill: #fbf3f3;
+				animation: cco 0.3s linear infinite;
+			}
+			@keyframes cco {
+				0% {
+					fill: #fbf3f3;
+				}
+				50% {
+					fill: #685b5b;
+				}
+				100% {
+					fill: fbf3f3;
+				}
+			}
+			.lb {
+				fill: url("#linear-gradient");
+			}
+
+			]]>
+		</style>
+		<linearGradient id="linear-gradient" x1="250.438" y1="289.051" x2="469.562" y2="289.051" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#685b5b" stop-opacity="0.2"/>
+			<stop offset="1" stop-color="#fbf3f3"/>
+		</linearGradient>
+	</defs>
+	<title>wait</title>
+	<use xlink:href="#loadingBar">
+		<animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 360 360" to="360 360 360" begin="0s" dur="0.85s" repeatCount="indefinite"/>
+	</use>
+	<path class="lpp" d="M388.8,360a28.8,28.8,0,1,0-8.436,20.365A28.76,28.76,0,0,0,388.8,360Z"/>
+	<!---->
+
+</svg>
